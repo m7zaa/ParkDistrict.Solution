@@ -19,9 +19,27 @@ namespace ParkDistrict.Controllers
 
         // GET api/parks
         [HttpGet]
-        public ActionResult<IEnumerable<Park>> Get()
+        public ActionResult<IEnumerable<Park>> Get(string name, string location, bool playground, bool picnicArea)
         {
-            return _db.Parks.ToList();
+            var query = _db.Parks.AsQueryable();
+
+            if (name != null)
+            {
+                query = query.Where(entry => entry.Name.ToLower().Contains(name.ToLower()));
+            }
+            if (location != null)
+            {
+                query = query.Where(entry => entry.Location.ToLower().Contains(location.ToLower()));
+            }
+            if (playground != false)
+            {
+                query = query.Where(entry => entry.Playground == playground);
+            }
+            if (picnicArea != false)
+            {
+                query = query.Where(entry => entry.PicnicArea == picnicArea);
+            }
+            return query.ToList();
         }
 
         // POST api/parks
