@@ -1,0 +1,8 @@
+@using ParkDistrict.Models;
+
+@foreach (Park park in Model)
+{
+    <p>@Html.ActionLink($"{@park.Name}", "Details", "Parks", new {id = park.ParkId})</p>
+}
+<hr>
+<p>@Html.ActionLink("Add Park", "Create")</p>
