@@ -21,7 +21,6 @@ namespace ParkDistrict.Models
             RestClient client = new RestClient("http://localhost:5000/api/parks");
             RestRequest request = new RestRequest(Method.GET);
             request.AddParameter("flex", search);
-            Console.WriteLine("search = ", search);
             var response = await client.ExecuteTaskAsync(request);
             return response.Content;
         }

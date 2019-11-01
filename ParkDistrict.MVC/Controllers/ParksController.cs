@@ -12,12 +12,6 @@ namespace ParkDistrict.Controllers
 {
     public class ParksController : Controller
     {
-
-        //   public IActionResult Index () {
-        //       var parkList = Park.ParkList ();
-        //       return View (parkList);
-        //   }
-
         public IActionResult Index(string search)
         {
             var parkList = Park.ParkListSearch(search);

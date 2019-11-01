@@ -27,31 +27,38 @@ namespace ParkDistrict.Controllers
 
         // GET api/parks
         [HttpGet]
-        public ActionResult<IEnumerable<Park>> Get(string name, string location, bool playground, bool picnicArea, bool bathroom)
+        public ActionResult<IEnumerable<Park>> Get(string flex, string name, string location, bool playground, bool picnicArea, bool bathroom)
         {
             var query = _db.Parks.AsQueryable();
-
-            if (name != null)
+            if (flex != null)
             {
-                query = query.Where(entry => entry.Name.ToLower().Contains(name.ToLower()));
+                flex = flex.ToLower();
+                query = query.Where(entry => entry.Name.ToLower().Contains(flex) || entry.Location.ToLower().Contains(flex) || entry.Playground && flex.Contains("layground") || entry.PicnicArea && flex.Contains("icnic") || entry.Bathroom && flex.Contains("athroom")); 
             }
-            if (location != null)
+            else
             {
-                query = query.Where(entry => entry.Location.ToLower().Contains(location.ToLower()));
+                if (name != null)
+                {
+                    query = query.Where(entry => entry.Name.ToLower().Contains(name.ToLower()));
+                }
+                if (location != null)
+                {
+                    query = query.Where(entry => entry.Location.ToLower().Contains(location.ToLower()));
+                }
+                if (playground != false)
+                {
+                    query = query.Where(entry => entry.Playground == playground);
+                }
+                if (picnicArea != false)
+                {
+                    query = query.Where(entry => entry.PicnicArea == picnicArea);
+                }
+                if (bathroom != false)
+                {
+                    query = query.Where(entry => entry.Bathroom == bathroom);
+                }
             }
-            if (playground != false)
-            {
-                query = query.Where(entry => entry.Playground == playground);
-            }
-            if (picnicArea != false)
-            {
-                query = query.Where(entry => entry.PicnicArea == picnicArea);
-            }
-            if (bathroom != false)
-            {
-                query = query.Where(entry => entry.Bathroom == bathroom);
-            }
-            return query.ToList();
+                return query.ToList();
         }
 
         // POST api/parks
