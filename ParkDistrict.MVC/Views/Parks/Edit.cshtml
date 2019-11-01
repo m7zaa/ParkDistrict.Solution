@@ -10,8 +10,8 @@
     @Html.TextBoxFor(model => model.Name)
     <br>
 
-    <label for="Name">Park Family:</label>
-    @Html.TextBoxFor(model => model.Location)
+    <label for="Name">Park Location:</label>
+    @Html.TextBoxFor(model => model.Location,new { style = "width: 400px;" })
     <br>
 
     <label for="Name">Playground:</label>
@@ -19,10 +19,13 @@
     <br>
     
 
-    <label for="Name">Park Picnic Area:</label>
+    <label for="Name">Picnic Area:</label>
     @Html.CheckBoxFor(model => model.PicnicArea)
     <br>
 
+    <label for="Name">Public Bathroom:</label>
+    @Html.CheckBoxFor(model => model.Bathroom)
+    <br>
 
     <input type="submit" value="Save Changes" class="btn btn-primary" />
 }

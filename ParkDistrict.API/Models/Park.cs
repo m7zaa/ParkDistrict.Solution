@@ -7,5 +7,6 @@ namespace ParkDistrict.Models
         public string Location { get; set; }
         public bool Playground { get; set; }
         public bool PicnicArea { get; set; }
+        public bool Bathroom { get; set; }
     }
 }

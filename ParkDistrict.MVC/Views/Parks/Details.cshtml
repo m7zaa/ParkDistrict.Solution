@@ -2,8 +2,30 @@
 @model ParkDistrict.Models.Park;
 <h2>@Model.Name Details</h2>
 <p>Location: @Model.Location</p>
-<p>Playground: @Model.Playground</p>
-<p>Picnic Area: @Model.PicnicArea</p>
+@if (@Model.Playground == true)
+{
+    <p>Playground: Yes</p>
+}
+else
+{
+    <p>Playground: No</p>
+}
+@if (@Model.PicnicArea == true)
+{
+    <p>Picnic Area: Yes</p>
+}
+else
+{
+    <p>Picnic Area : No</p>
+}
+@if (@Model.Bathroom == true)
+{
+    <p>Public Bathroom: Yes</p>
+}
+else
+{
+    <p>Public Bathroom: No</p>
+}
 
 <p>@Html.ActionLink("Delete Park", "Delete", new {id = @Model.ParkId})</p>
 <p>@Html.ActionLink("Edit Park", "Edit", new {id = @Model.ParkId})</p>
