@@ -4,7 +4,7 @@ namespace ParkDistrict.Models
     {
         public int ParkId { get; set; }
         public string Name { get; set; }
-        public string Neighborhood { get; set; }
+        public string Location { get; set; }
         public bool Playground { get; set; }
         public bool PicnicArea { get; set; }
     }
