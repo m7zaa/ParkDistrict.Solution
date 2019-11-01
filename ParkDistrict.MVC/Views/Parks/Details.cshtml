@@ -1,0 +1,9 @@
+@using ParkDistrict.Models;
+@model ParkDistrict.Models.Park;
+<h2>@Model.Name Details</h2>
+<p>Location: @Model.Location</p>
+<p>Playground: @Model.Playground</p>
+<p>Picnic Area: @Model.PicnicArea</p>
+
+<p>@Html.ActionLink("Delete Park", "Delete", new {id = @Model.ParkId})</p>
+<p>@Html.ActionLink("Edit Park", "Edit", new {id = @Model.ParkId})</p>
