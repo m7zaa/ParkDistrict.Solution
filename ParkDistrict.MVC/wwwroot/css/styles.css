@@ -8,17 +8,32 @@ body {
     sans-serif;
 }
 .splashHeader {
-    margin-top: 100px;
-    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    margin-top: 160px;
+    text-shadow: 4px 8px 6px rgba(51, 19, 19, 0.6);
 }
 
 h1 {
 
     font-size: 100px;
+    color: white;
+}
+p {
+    font-size: 20px;
+}
+.parkImg, .searchImg {
+    width: 30px;
 }
 
 
+.addImg {
+    width: 30px;
+}
 
+.createImg {
+    height: 40px;
+}
 
-
-
+.deleteImg {
+    height: 40px;
+    margin-left: 20px;
+}

@@ -26,6 +26,12 @@ else
 {
     <p>Public Bathroom: No</p>
 }
+<hr>
+<a href='@Url.Action("Edit", new {id = @Model.ParkId})'>
+    <img class="createImg", src='@Url.Content("~/img/edit.png")' />
+</a>
 
-<p>@Html.ActionLink("Delete Park", "Delete", new {id = @Model.ParkId})</p>
-<p>@Html.ActionLink("Edit Park", "Edit", new {id = @Model.ParkId})</p>
+<a href='@Url.Action("Delete", new {id = @Model.ParkId})'>
+    <img class="deleteImg", src='@Url.Content("~/img/delete.png")' />
+</a>
+

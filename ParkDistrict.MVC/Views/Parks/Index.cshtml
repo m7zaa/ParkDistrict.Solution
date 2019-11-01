@@ -4,5 +4,8 @@
 {
     <p>@Html.ActionLink($"{@park.Name}", "Details", "Parks", new {id = park.ParkId})</p>
 }
-<hr>
-<p>@Html.ActionLink("Add Park", "Create")</p>
+<br>
+
+<a href='@Url.Action("Create", "Parks")'>
+    <img class="createImg", src='@Url.Content("~/img/add.jpg")' />
+</a>
