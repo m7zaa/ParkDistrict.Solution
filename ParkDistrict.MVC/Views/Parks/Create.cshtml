@@ -1,0 +1,29 @@
+@using ParkDistrict.Models;
+@model Park;
+
+
+<h2>Create a new park</h2>
+
+@using (Html.BeginForm())
+{
+    <label for="Name">Park Name:</label>
+    @Html.TextBoxFor(model => model.Name)
+    <br>
+
+    <label for="Name">Park Location:</label>
+    @Html.TextBoxFor(model => model.Location)
+    <br>
+
+    <label for="Name">Playground:</label>
+    @Html.CheckBoxFor(m => m.Playground)
+    <br>
+    
+
+    <label for="Name">Park Picnic Area:</label>
+    @Html.CheckBoxFor(model => model.PicnicArea)
+    <br>
+
+
+
+    <input type="submit" value="Add new park" class="btn btn-primary" />
+}

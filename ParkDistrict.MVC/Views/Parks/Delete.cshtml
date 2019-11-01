@@ -1,0 +1,14 @@
+@using ParkDistrict.Models;
+@model ParkDistrict.Models.Park;
+
+<h1>Delete</h1>
+
+<h2>Are you sure you want to delete @Model.Name?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type="hidden" id="ParkId" name="id" value="@Model.ParkId"/>
+    
+    <input type="submit" value="Remove" />
+}
+@Html.ActionLink("Back to List", "Index")

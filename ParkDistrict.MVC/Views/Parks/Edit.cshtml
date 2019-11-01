@@ -1,0 +1,28 @@
+@using ParkDistrict.Models;
+@model ParkDistrict.Models.Park;
+<h1>Edit</h1>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ParkId)
+
+    <label for="Name">Park Name:</label>
+    @Html.TextBoxFor(model => model.Name)
+    <br>
+
+    <label for="Name">Park Family:</label>
+    @Html.TextBoxFor(model => model.Location)
+    <br>
+
+    <label for="Name">Playground:</label>
+    @Html.CheckBoxFor(m => m.Playground)
+    <br>
+    
+
+    <label for="Name">Park Picnic Area:</label>
+    @Html.CheckBoxFor(model => model.PicnicArea)
+    <br>
+
+
+    <input type="submit" value="Save Changes" class="btn btn-primary" />
+}
