@@ -3,9 +3,13 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ParkDistrict.Models;
+using Microsoft.AspNetCore.Authorization;
+using System;
+
 
 namespace ParkDistrict.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ParksController : ControllerBase
